@@ -1,8 +1,5 @@
-import fooString from './foo'
 import file from './webpack-academy.png'
 import createCard from './card'
-
-console.log("Hello from webpack", fooString, file)
 
 createCard(
   'Card title',
