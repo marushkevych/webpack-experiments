@@ -8,7 +8,10 @@
     "build:dev": "npm run build -- --env.env=dev",
     "build:prod": "npm run build -- --env.env=prod",
     "build:watch": "npm run build:dev -- --watch",
-    
+
+    "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
+    "debug:prod": "npm run debug -- --env.env=prod",
+
     "build:bundleanalyze": "npm run build:dev -- --env.addons=bundleanalyze",
     "build:dupchecker": "npm run build:dev -- --env.addons=dupchecker",
     "build:myfirstplugin": "npm run build:dev -- --env.addons=myfirstplugin",
