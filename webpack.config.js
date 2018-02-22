@@ -1,6 +1,7 @@
 const path = require('path')
 const ExamplePlugin = require('./ExamplePlugin')
 const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = (env) => {
 
@@ -10,7 +11,7 @@ module.exports = (env) => {
     entry: './src/index.js',
     output: {
       filename: 'bundle.js',
-      path: path.join(__dirname, 'build')
+      path: path.join(__dirname, 'dist')
     },
     module: {
       rules: [
@@ -37,6 +38,7 @@ module.exports = (env) => {
     },
     plugins: [
       new ExamplePlugin(),
+      new CopyWebpackPlugin(['index.html'])
       // new webpack.optimize.UglifyJsPlugin()
     ]
   }
