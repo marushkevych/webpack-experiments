@@ -1,45 +1,11 @@
-const path = require('path')
-const ExamplePlugin = require('./ExamplePlugin')
-const webpack = require('webpack')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const commonConfig = require('./build-utils/webpack.common')
+const webpackMerge = require('webpack-merge')
 
 module.exports = (env) => {
 
   console.log('env:', env)
 
-  return {
-    entry: './src/index.js',
-    output: {
-      filename: 'bundle.js',
-      path: path.join(__dirname, 'dist')
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['env']
-            }
-          }
-        },
-        {
-          test: /\.png$/,
-          use: {
-            loader: 'file-loader',
-            options: {
-              name: './images/[hash].[ext]'
-            }
-          }
-        }
-      ]
-    },
-    plugins: [
-      new ExamplePlugin(),
-      new CopyWebpackPlugin(['index.html'])
-      // new webpack.optimize.UglifyJsPlugin()
-    ]
-  }
+  const envConfig = require(`./build-utils/webpack.${env.env}.js`)
+
+  return webpackMerge(commonConfig, envConfig)
 }

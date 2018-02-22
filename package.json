@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "build:watch": "npm run build -- --watch",
-    "build:log": "npm run build -- --env.foo=1 --env.bar=2"
+    "build:dev": "npm run build:watch -- --env.env='dev'",
+    "build:prod": "npm run build -- --env.env='prod'"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "babel-preset-env": "^1.6.1",
     "copy-webpack-plugin": "^4.4.1",
     "file-loader": "^1.1.6",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
   }
 }
