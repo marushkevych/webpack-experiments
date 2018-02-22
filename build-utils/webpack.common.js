@@ -1,12 +1,12 @@
 const paths = require('./common-paths')
 const ExamplePlugin = require('../ExamplePlugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: '[chunkhash].bundle.js',
     path: paths.outputPath
   },
   module: {
@@ -34,7 +34,7 @@ const config = {
   },
   plugins: [
     new ExamplePlugin(),
-    new CopyWebpackPlugin(['index.html']),
+    new HtmlWebpackPlugin(),
     new webpack.ProgressPlugin()
   ]
 }

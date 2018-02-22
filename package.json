@@ -8,10 +8,8 @@
     "build:dev": "npm run build -- --env.env=dev",
     "build:prod": "npm run build -- --env.env=prod",
     "build:watch": "npm run build:dev -- --watch",
-
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
     "debug:prod": "npm run debug -- --env.env=prod",
-
     "build:bundleanalyze": "npm run build:dev -- --env.addons=bundleanalyze",
     "build:dupchecker": "npm run build:dev -- --env.addons=dupchecker",
     "build:myfirstplugin": "npm run build:dev -- --env.addons=myfirstplugin",
@@ -24,9 +22,9 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "copy-webpack-plugin": "^4.4.1",
     "duplicate-package-checker-webpack-plugin": "^2.1.0",
     "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.10.0",
     "webpack-merge": "^4.1.1"
