@@ -5,12 +5,13 @@ import './index.css'
 
 createCard(
   'Card title 1',
-  'Card body, werwe wfds sdf sdf sdf sdf sdff sdffsf d',
+  `The image below is served through generated URL, 
+  becasue its size exceeds configured limit of 10 Kb`,
   academyImage
 )
 
 createCard(
   'Card title 2',
-  'Card body, hello there!!',
+  'The image below is embedded in the bundle',
   webpackLogo
 )
