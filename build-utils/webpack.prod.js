@@ -17,7 +17,9 @@ const config = {
   },
   plugins: [
     new ExtractTextWebpackPlugin('style.css'),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true // dont remove sourceMap footer from the bundle
+    })
   ]
 }
 
