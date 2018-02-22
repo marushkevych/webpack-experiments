@@ -1,6 +1,7 @@
 const paths = require('./common-paths')
 const ExamplePlugin = require('../ExamplePlugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack')
 
 const config = {
   entry: './src/index.js',
@@ -33,7 +34,8 @@ const config = {
   },
   plugins: [
     new ExamplePlugin(),
-    new CopyWebpackPlugin(['index.html'])
+    new CopyWebpackPlugin(['index.html']),
+    new webpack.ProgressPlugin()
   ]
 }
 
