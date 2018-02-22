@@ -10,6 +10,6 @@ createCard(
 
 createCard(
   'Card title 2',
-  'Card body, werwe wfds sdf sdf sdf sdf sdff sdffsf d',
+  'Card body, hello there!!',
   webpackLogo
 )

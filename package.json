@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "server": "webpack-dev-server --port=9000 --env.env=dev",
     "build:dev": "npm run build -- --env.env=dev",
     "build:prod": "npm run build -- --env.env=prod",
     "build:watch": "npm run build:dev -- --watch",
@@ -14,6 +15,8 @@
     "build:dupchecker": "npm run build:dev -- --env.addons=dupchecker",
     "build:myfirstplugin": "npm run build:dev -- --env.addons=myfirstplugin",
     "build:allAddons": "npm run build:dev -- --env.addons=bundleanalyze --env.addons=dupchecker --env.addons=myfirstplugin",
+
+
     "webpack-defaults": "webpack-defaults"
   },
   "author": "",
@@ -28,6 +31,7 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.10.0",
+    "webpack-dev-server": "^2.11.1",
     "webpack-merge": "^4.1.1"
   }
 }
